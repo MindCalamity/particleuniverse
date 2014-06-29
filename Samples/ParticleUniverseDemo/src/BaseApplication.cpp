@@ -21,14 +21,7 @@ BaseApplication::~BaseApplication()
 void BaseApplication::run()
 {	
 	// Construct Ogre::Root
-	mRoot = new Root(
-        /* plugins.cfg file*/	"plugins.cfg",
-        /* config file */ 		"ogre.cfg",
-		/* log file */ 			""
-	);
-
-	mRoot->loadPlugin(OGRE_PLUGIN_DIR_REL + std::string("/RenderSystem_GL"));
-	mRoot->loadPlugin("./Plugin_ParticleUniverse");
+	mRoot = new Root();
 
     // Fire up Ogre::Root
     if (!mRoot->restoreConfig())
